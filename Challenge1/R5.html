@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Challenge 1</title>
+  <link rel="stylesheet" href="c1styles.css">
+  
+  <script>
+	function redirect(){document.location.href = "SansWin.html"}
+	function checkAnswers(){
+		var a1 = document.getElementById("Q1Inp").value;
+		var a2 = document.getElementById("Q2Inp").value;
+		var a3 = document.getElementById("Q3Inp").value;
+		var a4 = document.getElementById("Q4Inp").value;
+		var a5 = document.getElementById("Q5Inp").value;
+		var a6 = document.getElementById("Q6Inp").value;
+		
+		var res1 = document.getElementById("Q1Res");
+		var res2 = document.getElementById("Q2Res");
+		var res3 = document.getElementById("Q3Res");
+		var res4 = document.getElementById("Q4Res");
+		var res5 = document.getElementById("Q5Res");
+		var res6 = document.getElementById("Q6Res");
+		
+		console.log(a1);
+		var correct = 0
+		
+		if(a1.toUpperCase() === "NACHO CHEESE"){correct++; res1.style.color = "green"; res1.innerHTML = "Correct"} else {res1.style.color = "red"; res1.innerHTML = "Incorrect"}
+		if(a2.toUpperCase() === "YOU PLANET"){correct++; res2.style.color = "green"; res2.innerHTML = "Correct"} else {res2.style.color = "red"; res2.innerHTML = "Incorrect"}
+		if(a3.toUpperCase() === "AN IMPASTA"){correct++; res3.style.color = "green"; res3.innerHTML = "Correct"} else {res3.style.color = "red"; res3.innerHTML = "Incorrect"}
+		if(a4.toUpperCase() === "NOBODY KNOWS"){correct++; res4.style.color = "green"; res4.innerHTML = "Correct"} else {res4.style.color = "red"; res4.innerHTML = "Incorrect"}
+		if(a5.toUpperCase() === "FSH"){correct++; res5.style.color = "green"; res5.innerHTML = "Correct"} else {res5.style.color = "red"; res5.innerHTML = "Incorrect"}
+		if(a6.toUpperCase() === "BISON"){correct++; res6.style.color = "green"; res6.innerHTML = "Correct"} else {res6.style.color = "red"; res6.innerHTML = "Incorrect"}
+		
+		
+		if(correct >= 2){
+			document.getElementById("button").innerHTML = "Go to keyword!"
+			document.getElementById("button").onclick = redirect
+			
+		}
+		
+	}
+  </script>
+  
+  
+</head>
+<body>
+  <div class="container">
+    <img src="src\sanswink.png" alt="Centered Image">
+	
+    <div> <p>What do you call cheese that isn’t yours</p> <input id="Q1Inp"> </input> <p id="Q1Res" ></p> </div>
+	<div> <p>How do you organise a space party</p> <input id="Q2Inp"> </input> <p id="Q2Res" ></p> </div>
+	<div> <p>What do you call fake spaghetti</p> <input id="Q3Inp"> </input> <p id="Q3Res" ></p> </div>
+	<div> <p>What do you call somebody with no body and no nose</p> <input id="Q4Inp"> </input> <p id="Q4Res" ></p> </div>
+	<div> <p>What do you call a fish with no eyes?</p> <input id="Q5Inp"> </input> <p id="Q5Res" ></p> </div>
+	<div> <p>What did the buffalo say to his son when he left for college? </p> <input id="Q6Inp"> </input> <p id="Q6Res" ></p> </div>
+
+    <div class="buttons"> 
+      <a><button onclick="checkAnswers()" id="button">Submit</button></a>
+    </div>
+  </div>
+</body>
+</html>

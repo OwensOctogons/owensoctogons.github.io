@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Challenge 1</title>
+  <link rel="stylesheet" href="c1styles.css">
+  
+   <script>
+	var running = false;
+	var maxruns = 250;
+	var runs = 0;
+	const sleep = (delay) => new Promise((resolve) => setTimeout(resolve, delay))
+	
+	function redirect(){document.location.href = "GamblingWin.html"}
+	
+	async function spin(){
+		if(running){return}
+		running = true;
+		runs ++;
+	
+		var title = document.getElementById("title");
+		title.innerHTML = "Let's go gambling!";
+		title.style.color = "black";
+		document.getElementById("left").innerHTML = "-";
+		document.getElementById("middle").innerHTML = "-";
+		document.getElementById("right").innerHTML = "-";
+		var left = Math.floor(Math.random() * 10);
+		var middle = Math.floor(Math.random() * 10);
+		var right = Math.floor(Math.random() * 10);
+		
+		if(runs === maxruns){
+			left = 6;
+			middle = 6;
+			right = 6;
+		}
+		
+		await sleep(400);
+		document.getElementById("left").innerHTML = left;
+		await sleep(400);
+		document.getElementById("middle").innerHTML = middle;
+		await sleep(400);
+		document.getElementById("right").innerHTML = right;
+		
+		
+		var win = false;
+		if(left === middle && left === right){
+			title.innerHTML = "You Won! Took you " + runs + " times";
+			title.style.color = 'green';
+			var button = document.getElementById("spinner")
+			button.innerHTML = "Proceed to Keyword!";
+			button.onclick = redirect;
+
+		}else{
+			title.innerHTML = "Aw Dangit.";
+			title.style.color = 'red';
+		}
+		running = false;
+		
+	}
+  </script>
+  
+</head>
+<body>
+
+
+  <div class="container">
+  <h1 id="title"> Let's go gambling! </h1>
+    <table style="border:1px solid black;">
+    <tr>
+        <td style="white-space: nowrap"><h1 id="left">-</h1></td>
+        <td style="width:800px;height:250px;"><h1 id="middle">-</h1></td>
+        <td style="white-space: nowrap"><h1 id="right">-</h1></td>
+    </tr>
+</table>
+	
+    <p>
+     You go and sit down at one of the slot machines, looking more carefully at one of the machines you see written above it “Three of the same number wins the keyword!”
+    </p>
+    <div class="buttons">
+      <button id="spinner" onclick="spin()">Spin the slots</button>
+    </div>
+  </div>
+  
+
+</body>
+</html>
