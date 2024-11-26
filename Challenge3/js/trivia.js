@@ -94,7 +94,7 @@ function finalQuestion(){
     if(input==answer){
         document.getElementById("Question_Counter").innerHTML = "CORRECT!"
         document.getElementById("Question_Counter").style.color = "green"
-        document.getElementById("Keyword").innerHTML = "Keyword: Spectacular!"
+        document.getElementById("Keyword").innerHTML = "Keyword: Spectacular! Bonus question: What is the smallest form of the equation to find x?"
         document.getElementById("Keyword").style.color = "green"
     }else{
         document.getElementById("Question_Counter").innerHTML = "INCORRECT"
