@@ -49,7 +49,7 @@ function submit(question){
             }
             break;
         case 10:
-            if(input === "mr. mime" || input === "mr mime"){
+            if(input === "mr. mime"){
                 correct = true;
             }
             break;
