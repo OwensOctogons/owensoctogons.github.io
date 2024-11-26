@@ -44,7 +44,7 @@ function submit(question){
             }
             break;
         case 9:
-            if(input === "ghastly"){
+            if(input === "gastly"){
                 correct = true;
             }
             break;
