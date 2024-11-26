@@ -49,7 +49,7 @@ function submit(question){
             }
             break;
         case 10:
-            if(input === "mr. mime"){
+            if(input === "mr. mime" || input === "mr mime"){
                 correct = true;
             }
             break;
@@ -60,7 +60,7 @@ function submit(question){
     if(correct){
         var nextQ = "number"+(parseInt(question)+1)+".html"
         if(parseInt(question) === 10){
-            window.location.replace(pokeword.html)
+            window.location.replace("pokeword.html")
         }else{
             window.location.replace(nextQ)
         }
